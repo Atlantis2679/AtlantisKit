@@ -1,0 +1,21 @@
+{
+    "fileVersion": 1,
+    "name": "AtlantisLib",
+    "version": "4.0.0",
+    "uuid": "b8d0be2a-8da7-4112-8b92-179389b4abe0",
+    "frcYear": 2025,
+    "mavenUrls": [
+      "https://maven.pkg.github.com/atlantis2679/AtlantisLib"
+    ],
+    "jsonUrl": "https://github.com/atlantis2679/AtlantisLib/releases/latest/download/AtlantisLib.json",
+    "javaDependencies": [
+        {
+            "groupId": "atlantis2679.lib",
+            "artifactId": "atlantislib",
+            "version": "4.0.0"
+        }
+    ],
+    "jniDependencies": [],
+    "nativeDependencies": [],
+    "cppDependencies": []
+}

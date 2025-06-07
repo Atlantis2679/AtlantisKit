@@ -46,14 +46,25 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             groupId = group.toString()
-            artifactId = "atlantislib"
+            artifactId = project.name
             version = project.version.toString()
+
+            pom {
+                name.set("AtlantisLib")
+                description.set("Team 2679 Atlantis FRC library")
+                url.set("https://github.com/Atlantis2679/AtlantisLib")
+            }
         }
     }
+    
     repositories {
         maven {
-            name = "LocalVendorDep"
-            url = uri("file://${projectDir}/vendordeps/maven")
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/atlantis2679/AtlantisLib")
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
         }
     }
 }
