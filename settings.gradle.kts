@@ -1,1 +1,1 @@
-rootProject.name = "atlantislib"
+rootProject.name = "AtlantisLib"
