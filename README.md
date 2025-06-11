@@ -27,7 +27,8 @@ To read more about this version, go to the [latest release page](https://github.
 
 ## 📦 Installation
 To include AtlantisLib in your robot code, add the following to your Vendordeps:
-https://github.com/atlantis2679/AtlantisLib/releases/latest/download/AtlantisLib.json
+
+```https://atlantis2679.github.io/AtlantisLib/AtlantisLib.json```
 
 Alternatively, you can download the `.json` file manually and place it in your project's `vendordeps/` folder.
 
