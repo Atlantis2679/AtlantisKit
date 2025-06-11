@@ -1,4 +1,5 @@
 {
+    "fileName": "AtlantisLib.json",
     "fileVersion": 1,
     "name": "AtlantisLib",
     "version": "4.0.0",
@@ -18,5 +19,4 @@
     "jniDependencies": [],
     "nativeDependencies": [],
     "cppDependencies": []
-  }
-  
+}
