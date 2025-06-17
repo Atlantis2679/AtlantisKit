@@ -25,7 +25,7 @@ Starting in the **2025 season**, we’re releasing it publicly as AtlantisLib. T
 
 AtlantisLib depends on the following libraries:
 
-- [WPILib](https://github.com/wpilibsuite/allwpilib) (BSD-3 License)  
+- [WPILib](https://github.com/wpilibsuite/allwpilib)
 - [AdvantageKit](https://github.com/AdvantageScope/AdvantageKit)  
 
 ## 📦 Installation
