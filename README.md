@@ -21,7 +21,15 @@ AtlantisLib started as an internal tool called **RobotBase**, developed and used
 
 Starting in the **2025 season**, we’re releasing it publicly as AtlantisLib. This first public version is **4.0.0**, reflecting its maturity and internal history.
 
+## Dependencies
+
+AtlantisLib depends on the following libraries:
+
+- [WPILib](https://github.com/wpilibsuite/allwpilib) (BSD-3 License)  
+- [AdvantageKit (AK)](https://github.com/AdvantageScope/AdvantageKit)  
+
 ## 📦 Installation
+To use AtlantisLib, you need to include WPILib and AdvantageKit as dependencies in your robot project. Make sure to add them to your vendordeps or build configuration before including AtlantisLib.
 
 To include AtlantisLib in your robot code, add the following to your vendordeps:
 
