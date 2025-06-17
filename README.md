@@ -43,7 +43,7 @@ Explore the full documentation and examples on the [AtlantisLib Wiki](https://gi
 
 ## 📬 Contact Us
 
-Have a question, bug, or feature request? [Open an issue](https://github.com/Atlantis2679/AtlantisLib/issues) or contact us directly — we’d love to hear from other teams!
+Have a question, bug, or feature request? Feel free to [contact us](https://github.com/Atlantis2679/AtlantisLib/issues) — we’d like to hear from you!
 
 ## 🏷️ License
 
