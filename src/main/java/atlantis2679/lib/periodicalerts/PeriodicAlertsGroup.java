@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 
 public class PeriodicAlertsGroup {
-    public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("NetworkAlerts");
+    public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("PeriodicAlerts");
     private final String groupName;
 
     public PeriodicAlertsGroup(String groupName) {
