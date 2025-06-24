@@ -1,25 +1,25 @@
-package atlantis2679.lib.networkalerts;
+package atlantis2679.lib.periodicalerts;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 import edu.wpi.first.wpilibj.Alert.AlertType;
 
-public class NetworkAlertsGroup {
-    public static final NetworkAlertsGroup defaultInstance = new NetworkAlertsGroup("NetworkAlerts");
+public class PeriodicAlertsGroup {
+    public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("NetworkAlerts");
     private final String groupName;
 
-    public NetworkAlertsGroup(String groupName) {
+    public PeriodicAlertsGroup(String groupName) {
         this.groupName = groupName;
     }
 
-    public NetworkAlertsGroup getSubGroup(String subGroupName) {
-        return new NetworkAlertsGroup(groupName + "/" + subGroupName);
+    public PeriodicAlertsGroup getSubGroup(String subGroupName) {
+        return new PeriodicAlertsGroup(groupName + "/" + subGroupName);
     }
 
     public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, AlertType alertType) {
-        NetworkPeriodicAlert periodicAlert = new NetworkPeriodicAlert(this, message, isActive, alertType);
-        NetworkAlertsManager.addNetworkPeriodicAlert(periodicAlert);
+        PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, alertType);
+        PeriodicAlertsManager.addNetworkPeriodicAlert(periodicAlert);
         return isActive;
     }
 
