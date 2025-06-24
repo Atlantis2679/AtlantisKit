@@ -19,7 +19,7 @@ public class PeriodicAlertsGroup {
 
     public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, AlertType alertType) {
         PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, alertType);
-        PeriodicAlertsManager.addNetworkPeriodicAlert(periodicAlert);
+        PeriodicAlertsManager.add(periodicAlert);
         return isActive;
     }
 
