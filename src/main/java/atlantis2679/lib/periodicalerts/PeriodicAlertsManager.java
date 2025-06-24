@@ -13,7 +13,7 @@ public class PeriodicAlertsManager {
         }
     }
 
-    public static void addNetworkPeriodicAlert(PeriodicAlert periodicAlert) {
+    public static void add(PeriodicAlert periodicAlert) {
         alerts.add(periodicAlert);
     }
 }

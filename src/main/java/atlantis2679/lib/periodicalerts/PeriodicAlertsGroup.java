@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 
 public class PeriodicAlertsGroup {
-    public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("NetworkAlerts");
+    public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("PeriodicAlerts");
     private final String groupName;
 
     public PeriodicAlertsGroup(String groupName) {
@@ -19,7 +19,7 @@ public class PeriodicAlertsGroup {
 
     public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, AlertType alertType) {
         PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, alertType);
-        PeriodicAlertsManager.addNetworkPeriodicAlert(periodicAlert);
+        PeriodicAlertsManager.add(periodicAlert);
         return isActive;
     }
 
