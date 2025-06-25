@@ -42,9 +42,9 @@ public class TunablesTable implements Tunable {
     }
 
     public BooleanHolder addBoolean(String key, boolean defaultValue) {
-        BooleanHolder refValue = new BooleanHolder(defaultValue);
-        addBoolean(key, refValue::get, refValue::set);
-        return refValue;
+        BooleanHolder valueHolder = new BooleanHolder(defaultValue);
+        addBoolean(key, valueHolder::get, valueHolder::set);
+        return valueHolder;
     }
 
     public void addNumber(String key, DoubleSupplier getter, DoubleConsumer setter) {
@@ -52,9 +52,9 @@ public class TunablesTable implements Tunable {
     }
 
     public DoubleHolder addNumber(String key, Double defaultValue) {
-        DoubleHolder refValue = new DoubleHolder(defaultValue);
-        addNumber(key, refValue::get, refValue::set);
-        return refValue;
+        DoubleHolder valueHolder = new DoubleHolder(defaultValue);
+        addNumber(key, valueHolder::get, valueHolder::set);
+        return valueHolder;
     }
 
     public void addString(String key, Supplier<String> getter, Consumer<String> setter) {
@@ -62,9 +62,9 @@ public class TunablesTable implements Tunable {
     }
 
     public ValueHolder<String> addString(String key, String defaultValue) {
-        ValueHolder<String> refValue = new ValueHolder<String>(defaultValue);
-        addString(key, refValue::get, refValue::set);
-        return refValue;
+        ValueHolder<String> valueHolder = new ValueHolder<String>(defaultValue);
+        addString(key, valueHolder::get, valueHolder::set);
+        return valueHolder;
     }
 
     @Override
