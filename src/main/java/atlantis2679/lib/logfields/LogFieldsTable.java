@@ -10,6 +10,7 @@ import java.util.function.Supplier;
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
+import org.littletonrobotics.junction.mechanism.LoggedMechanism2d;
 
 import atlantis2679.lib.logfields.logfields.BooleanLogField;
 import atlantis2679.lib.logfields.logfields.DoubleLogField;
@@ -356,6 +357,10 @@ public class LogFieldsTable implements LoggableInputs {
 
     public void recordOutput(String name, String[][] value) {
         Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, LoggedMechanism2d value) {
+        Logger.recordOutput(name, value);
     }
 
     public <T extends WPISerializable> void recordOutput(String name, T value) {
