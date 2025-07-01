@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-group = "atlantis2679.lib"
+group = "team2679.atlantis.kit"
 version = "4.0.0"
 
 val wpilibVersion = "2025.3.2"
