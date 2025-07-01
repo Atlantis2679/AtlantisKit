@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables;
+package team2679.atlantiskit.tunables;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,7 +6,7 @@ import java.util.function.BiConsumer;
 
 import edu.wpi.first.util.sendable.Sendable;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import atlantis2679.lib.tunables.sendableproperties.TunableProperty;
+import team2679.atlantiskit.tunables.sendableproperties.TunableProperty;
 
 public class TunablesManager {
     private static Queue<TunableItem> newTunablesQueue = new LinkedList<>();

@@ -1,4 +1,4 @@
-package atlantis2679.lib.logfields;
+package team2679.atlantiskit.logfields;
 
 public abstract class IOBase {
     protected final LogFieldsTable fields;

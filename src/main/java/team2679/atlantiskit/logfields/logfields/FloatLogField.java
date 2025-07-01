@@ -1,4 +1,4 @@
-package atlantis2679.lib.logfields.logfields;
+package team2679.atlantiskit.logfields.logfields;
 
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;

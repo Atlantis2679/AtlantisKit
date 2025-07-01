@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables;
+package team2679.atlantiskit.tunables;
 
 import java.util.function.BiConsumer;
 import java.util.function.BooleanSupplier;
@@ -17,10 +17,10 @@ import edu.wpi.first.util.function.FloatConsumer;
 import edu.wpi.first.util.function.FloatSupplier;
 import edu.wpi.first.util.sendable.Sendable;
 import edu.wpi.first.util.sendable.SendableBuilder;
-import atlantis2679.lib.logfields.LogFieldsTable;
-import atlantis2679.lib.tunables.sendableproperties.BooleanTunableProperty;
-import atlantis2679.lib.tunables.sendableproperties.NumberTunableProperty;
-import atlantis2679.lib.tunables.sendableproperties.StringTunableProperty;
+import team2679.atlantiskit.logfields.LogFieldsTable;
+import team2679.atlantiskit.tunables.sendableproperties.BooleanTunableProperty;
+import team2679.atlantiskit.tunables.sendableproperties.NumberTunableProperty;
+import team2679.atlantiskit.tunables.sendableproperties.StringTunableProperty;
 
 public class TunableBuilder implements NTSendableBuilder {
     private final SendableBuilder baseBuilder;

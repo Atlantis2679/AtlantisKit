@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables;
+package team2679.atlantiskit.tunables;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,9 +12,9 @@ import java.util.function.Supplier;
 
 import edu.wpi.first.util.function.BooleanConsumer;
 import edu.wpi.first.util.sendable.Sendable;
-import atlantis2679.lib.valueholders.BooleanHolder;
-import atlantis2679.lib.valueholders.DoubleHolder;
-import atlantis2679.lib.valueholders.ValueHolder;
+import team2679.atlantiskit.valueholders.BooleanHolder;
+import team2679.atlantiskit.valueholders.DoubleHolder;
+import team2679.atlantiskit.valueholders.ValueHolder;
 
 public class TunablesTable implements Tunable {
     private final SendableType sendableType;

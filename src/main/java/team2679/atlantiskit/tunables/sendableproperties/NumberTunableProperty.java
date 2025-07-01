@@ -1,11 +1,11 @@
-package atlantis2679.lib.tunables.sendableproperties;
+package team2679.atlantiskit.tunables.sendableproperties;
 
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 
 import edu.wpi.first.util.sendable.SendableBuilder;
-import atlantis2679.lib.logfields.LogFieldsTable;
+import team2679.atlantiskit.logfields.LogFieldsTable;
 
 public class NumberTunableProperty extends TunableProperty {
     private final Supplier<double[]> field;

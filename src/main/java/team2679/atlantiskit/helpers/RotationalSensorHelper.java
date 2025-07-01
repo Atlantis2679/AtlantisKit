@@ -1,11 +1,11 @@
-package atlantis2679.lib.helpers;
+package team2679.atlantiskit.helpers;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import atlantis2679.lib.tunables.Tunable;
-import atlantis2679.lib.tunables.TunableBuilder;
-import atlantis2679.lib.valueholders.DoubleHolder;
+import team2679.atlantiskit.tunables.Tunable;
+import team2679.atlantiskit.tunables.TunableBuilder;
+import team2679.atlantiskit.valueholders.DoubleHolder;
 
 public class RotationalSensorHelper implements Tunable {
     private double measuredAngle;
