@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 import edu.wpi.first.util.function.BooleanConsumer;
 import edu.wpi.first.util.sendable.SendableBuilder;
-import atlantis2679.lib.logfields.LogFieldsTable;
+import team2679.atlantiskit.logfields.LogFieldsTable;
 
 public class BooleanTunableProperty extends TunableProperty {
     private final Supplier<boolean[]> field;
