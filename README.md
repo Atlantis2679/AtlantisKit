@@ -36,4 +36,4 @@ AtlantisKit is licensed under the MIT License. See the [LICENSE](LICENSE) file f
 
 AtlantisKit started as an internal tool called [**RobotBase**](https://github.com/Atlantis2679/RobotBase), developed and used by our team (Atlantis 2679) over several seasons. As it grew in functionality and stability, we saw its potential to help other teams.
 
-In the 2025 offseason, we’ve released it publicly as AtlantisKit. The first public version is 4.0.0, as it is a direct descendant of RobotBase. a
+In the 2025 offseason, we’ve released it publicly as AtlantisKit. The first public version is 4.0.0, as it is a direct descendant of RobotBase.
