@@ -1,17 +1,17 @@
 {
-    "fileName": "AtlantisLib.json",
-    "name": "AtlantisLib",
+    "fileName": "AtlantisKit.json",
+    "name": "AtlantisKit",
     "version": "4.0.0",
     "uuid": "b8d0be2a-8da7-4112-8b92-179389b4abe0",
     "frcYear": "2025",
     "mavenUrls": [
       "https://jitpack.io"
     ],
-    "jsonUrl": "https://atlantis2679.github.io/AtlantisLib/AtlantisLib.json",
+    "jsonUrl": "https://atlantis2679.github.io/AtlantisKit/AtlantisKit.json",
     "javaDependencies": [
       {
         "groupId": "com.github.Atlantis2679",
-        "artifactId": "AtlantisLib",
+        "artifactId": "AtlantisKit",
         "version": "4.0.0"
       }
     ],
