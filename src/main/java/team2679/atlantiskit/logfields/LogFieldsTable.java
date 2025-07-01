@@ -1,4 +1,4 @@
-package atlantis2679.lib.logfields;
+package team2679.atlantiskit.logfields;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
 import org.littletonrobotics.junction.mechanism.LoggedMechanism2d;
 
-import atlantis2679.lib.logfields.logfields.BooleanLogField;
-import atlantis2679.lib.logfields.logfields.DoubleLogField;
-import atlantis2679.lib.logfields.logfields.FloatLogField;
-import atlantis2679.lib.logfields.logfields.IntegerLogField;
-import atlantis2679.lib.logfields.logfields.LogField;
+import team2679.atlantiskit.logfields.logfields.BooleanLogField;
+import team2679.atlantiskit.logfields.logfields.DoubleLogField;
+import team2679.atlantiskit.logfields.logfields.FloatLogField;
+import team2679.atlantiskit.logfields.logfields.IntegerLogField;
+import team2679.atlantiskit.logfields.logfields.LogField;
 import edu.wpi.first.util.WPISerializable;
 import edu.wpi.first.util.function.FloatSupplier;
 import edu.wpi.first.util.struct.StructSerializable;

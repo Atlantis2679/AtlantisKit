@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables;
+package team2679.atlantiskit.tunables;
 
 public enum SendableType {
     NONE(null),

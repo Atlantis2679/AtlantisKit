@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables.sendableproperties;
+package team2679.atlantiskit.tunables.sendableproperties;
 
 import java.util.ArrayList;
 import java.util.List;

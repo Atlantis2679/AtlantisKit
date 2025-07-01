@@ -1,4 +1,4 @@
-package atlantis2679.lib.valueholders;
+package team2679.atlantiskit.valueholders;
 
 public class LongHolder {
     private long value;

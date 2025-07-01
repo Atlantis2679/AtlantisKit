@@ -1,4 +1,4 @@
-package atlantis2679.lib.periodicalerts;
+package team2679.atlantiskit.periodicalerts;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;

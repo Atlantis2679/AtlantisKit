@@ -1,4 +1,4 @@
-package atlantis2679.lib.periodicalerts;
+package team2679.atlantiskit.periodicalerts;
 
 import java.util.ArrayList;
 import java.util.List;

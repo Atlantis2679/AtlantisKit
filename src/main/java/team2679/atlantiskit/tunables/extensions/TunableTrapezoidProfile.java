@@ -1,10 +1,10 @@
-package atlantis2679.lib.tunables.extensions;
+package team2679.atlantiskit.tunables.extensions;
 
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.trajectory.TrapezoidProfile.Constraints;
 import edu.wpi.first.math.trajectory.TrapezoidProfile.State;
-import atlantis2679.lib.tunables.Tunable;
-import atlantis2679.lib.tunables.TunableBuilder;
+import team2679.atlantiskit.tunables.Tunable;
+import team2679.atlantiskit.tunables.TunableBuilder;
 
 public class TunableTrapezoidProfile implements Tunable {
     private TrapezoidProfile trapezoidProfile;

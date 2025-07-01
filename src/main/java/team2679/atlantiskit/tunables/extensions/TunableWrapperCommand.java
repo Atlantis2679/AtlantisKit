@@ -1,4 +1,4 @@
-package atlantis2679.lib.tunables.extensions;
+package team2679.atlantiskit.tunables.extensions;
 
 import java.util.Set;
 import java.util.function.Function;
@@ -6,10 +6,10 @@ import java.util.function.Function;
 import edu.wpi.first.util.sendable.SendableBuilder;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Subsystem;
-import atlantis2679.lib.tunables.SendableType;
-import atlantis2679.lib.tunables.Tunable;
-import atlantis2679.lib.tunables.TunableBuilder;
-import atlantis2679.lib.tunables.TunablesTable;
+import team2679.atlantiskit.tunables.SendableType;
+import team2679.atlantiskit.tunables.Tunable;
+import team2679.atlantiskit.tunables.TunableBuilder;
+import team2679.atlantiskit.tunables.TunablesTable;
 
 public class TunableWrapperCommand extends TunableCommand {
     private final Command command;
