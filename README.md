@@ -9,10 +9,7 @@ AtlantisLib helps your team:
 - Simplify the use of AdvantageKit  
 - Tune values live via the dashboard 
 - Provide a simple and consistant alerts manager
-- Manage sensors and subsystems more easily  
-- Accelerate development while complexity
-
-Whether you're building a simple drivetrain or integrating advanced autonomous features, AtlantisLib helps you focus on functionality and consistancy.
+- Manage sensors and subsystems more easily
 
 ## Background 🕘
 
