@@ -1,35 +1,24 @@
 # AtlantisLib – by FRC Team Atlantis 2679
 
-## 🧭 Overview
+## Overview 🧭
 
-**AtlantisLib** is a utility library for WPILib and AdvantageKit. It provides tools that simplify common robot programming tasks, helping FRC teams write cleaner, more maintainable, and more powerful code—faster.
+**AtlantisLib** is a utility library for WPILib and AdvantageKit. It provides tools that simplify common robot programming tasks, helping FRC teams write cleaner, more maintainable, and more powerful code, faster.
 
 AtlantisLib helps your team:
 
 - Simplify the use of AdvantageKit  
-- Remove boilerplate code  
-- Tune values live via the dashboard  
-- Provide consistent alerts and network messaging
-- Manage sensors and subsystems more easily  
-- Accelerate development without adding unnecessary complexity  
+- Tune values live via the dashboard 
+- Provide a simple and consistant alerts manager
+- Manage sensors and subsystems more easily
 
-Whether you're building a simple drivetrain or integrating advanced autonomous features, AtlantisLib helps you focus on functionality—not boilerplate.
+## Background 🕘
 
-## 🕘 Background
+AtlantisLib started as an internal tool called **RobotBase**, developed and used by our team (Atlantis 2679) over several seasons. As it grew in functionality and stability, we saw its potential to help other teams.
 
-AtlantisLib started as an internal tool called **RobotBase**, developed and used by our team (FRC 2679) over several seasons. As it grew in functionality and stability, we saw its potential to help other teams.
+Starting in the **2025 season**, we’re releasing it publicly as AtlantisLib. The first public version is **4.0.0**, as it is a direct.
 
-Starting in the **2025 season**, we’re releasing it publicly as AtlantisLib. This first public version is **4.0.0**, reflecting its maturity and internal history.
-
-## 📚 Dependencies
-
-AtlantisLib depends on the following libraries:
-
-- [WPILib](https://github.com/wpilibsuite/allwpilib)
-- [AdvantageKit](https://github.com/AdvantageScope/AdvantageKit)  
-
-## 📦 Installation
-To use AtlantisLib, you need to include WPILib and AdvantageKit as dependencies in your robot project. Make sure to add them to your vendordeps or build configuration before including AtlantisLib.
+## Installation 📦
+To use AtlantisLib, you need to include [WPILib](https://github.com/wpilibsuite/allwpilib) and [AdvantageKit](https://github.com/AdvantageScope/AdvantageKit) as dependencies in your robot project. Make sure to add them to your vendordeps or build configuration before including AtlantisLib.
 
 To include AtlantisLib in your robot code, add the following to your vendordeps:
 
@@ -37,14 +26,14 @@ To include AtlantisLib in your robot code, add the following to your vendordeps:
 
 Alternatively, download the `.json` manually and place it in your project's `vendordeps/` folder.
 
-## 📖 Documentation
+## Documentation 📖
 
 Explore the full documentation and examples on the [AtlantisLib Wiki](https://github.com/Atlantis2679/AtlantisLib/wiki).
 
-## 📬 Contact Us
+## Contact Us 📬
 
 Have a question, bug, or feature request? Feel free to [contact us](https://github.com/Atlantis2679/AtlantisLib/issues) — we’d like to hear from you!
 
-## 🏷️ License
+## License 🏷️
 
 AtlantisLib is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
