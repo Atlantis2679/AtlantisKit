@@ -32,7 +32,7 @@ Explore the full documentation and examples on the [AtlantisKit Wiki](https://gi
 
 ## Contact Us 📬
 
-Have a question, bug, or feature request? Feel free to [contact us](https://github.com/Atlantis2679/AtlantisKit/issues) — we’d like to hear from you!
+Have a question, bug, or feature request? Feel free to [contact us](https://github.com/Atlantis2679/AtlantisKit/wiki#contact-us) - we’d like to hear from you!
 
 ## License 🏷️
 
