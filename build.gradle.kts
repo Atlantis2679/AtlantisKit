@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "team2679.atlantiskit"
-version = "4.0.0"
+version = "4.0.1"
 
 val wpilibVersion = "2025.3.2"
 val advantageKitVersion = "4.1.2"
