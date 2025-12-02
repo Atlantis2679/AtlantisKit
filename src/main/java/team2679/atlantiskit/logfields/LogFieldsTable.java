@@ -303,39 +303,7 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-    public void recordOutput(String name, long value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, float value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, double value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, String value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
     public void recordOutput(String name, boolean[] value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, long[] value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, float[] value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, double[] value) {
-        Logger.recordOutput(prefix + name, value);
-    }
-
-    public void recordOutput(String name, String[] value) {
         Logger.recordOutput(prefix + name, value);
     }
 
@@ -343,7 +311,36 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
+    public void recordOutput(String name, int value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, int[] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, int[][] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, long value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, long[] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
     public void recordOutput(String name, long[][] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+
+    public void recordOutput(String name, float value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, float[] value) {
         Logger.recordOutput(prefix + name, value);
     }
 
@@ -351,7 +348,23 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
+    public void recordOutput(String name, double value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, double[] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
     public void recordOutput(String name, double[][] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, String value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, String[] value) {
         Logger.recordOutput(prefix + name, value);
     }
 
@@ -359,8 +372,29 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-    public void recordOutput(String name, LoggedMechanism2d value) {
-        Logger.recordOutput(name, value);
+    public <E extends Enum<E>> void recordOutput(String name, E value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public <E extends Enum<E>> void recordOutput(String name, E[] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public <E extends Enum<E>> void recordOutput(String name, E[][] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public <R extends Record> void recordOutput(String name, R value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    @SuppressWarnings("unchecked")
+    public <R extends Record> void recordOutput(String name, R... value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public <R extends Record> void recordOutput(String name, R[][] value) {
+        Logger.recordOutput(prefix + name, value);
     }
 
     public <T extends WPISerializable> void recordOutput(String name, T value) {
@@ -373,6 +407,10 @@ public class LogFieldsTable implements LoggableInputs {
     }
 
     public <T extends StructSerializable> void recordOutput(String name, T[][] value) {
+        Logger.recordOutput(prefix + name, value);
+    }
+
+    public void recordOutput(String name, LoggedMechanism2d value) {
         Logger.recordOutput(prefix + name, value);
     }
 }
