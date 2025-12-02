@@ -1,7 +1,7 @@
 {
     "fileName": "AtlantisKit.json",
     "name": "AtlantisKit",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "uuid": "b8d0be2a-8da7-4112-8b92-179389b4abe0",
     "frcYear": "2025",
     "mavenUrls": [
@@ -12,7 +12,7 @@
       {
         "groupId": "com.github.Atlantis2679",
         "artifactId": "AtlantisKit",
-        "version": "21fd52e8db"
+        "version": "4.0.1"
       }
     ],
     "jniDependencies": [],
