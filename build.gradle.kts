@@ -3,10 +3,10 @@ plugins {
 }
 
 group = "team2679.atlantiskit"
-version = "4.0.1"
+version = "4.1.0"
 
-val wpilibVersion = "2025.3.2"
-val advantageKitVersion = "4.1.2"
+val wpilibVersion = "2026.1.1"
+val advantageKitVersion = "26.0.0"
 
 java {
     toolchain {
