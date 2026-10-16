@@ -22,7 +22,7 @@ public class RotationalSensorHelper implements Tunable {
     public RotationalSensorHelper(double initialMeasuredAngle, double initialOffset) {
         measuredAngle = initialMeasuredAngle;
         offset = initialOffset;
-        prevTimeSec = Timer.getFPGATimestamp();
+        prevTimeSec = Timer.getTimestamp();
         recalculateAngle();
     }
 
@@ -33,7 +33,7 @@ public class RotationalSensorHelper implements Tunable {
     public void update(double measuredAngle) {
         this.measuredAngle = measuredAngle;
         prevTimeSec = currTimeSec;
-        currTimeSec = Timer.getFPGATimestamp();
+        currTimeSec = Timer.getTimestamp();
         previousAngle = calculatedAngle;
         recalculateAngle();
     }
