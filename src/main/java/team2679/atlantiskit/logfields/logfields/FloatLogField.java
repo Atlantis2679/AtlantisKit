@@ -3,7 +3,7 @@ package team2679.atlantiskit.logfields.logfields;
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
 
-import edu.wpi.first.util.function.FloatSupplier;
+import org.wpilib.util.function.FloatSupplier;
 
 public class FloatLogField implements FloatSupplier, LoggableInputs {
     private final FloatSupplier valueSupplier;

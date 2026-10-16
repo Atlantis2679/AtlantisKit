@@ -17,9 +17,9 @@ import team2679.atlantiskit.logfields.logfields.DoubleLogField;
 import team2679.atlantiskit.logfields.logfields.FloatLogField;
 import team2679.atlantiskit.logfields.logfields.IntegerLogField;
 import team2679.atlantiskit.logfields.logfields.LogField;
-import edu.wpi.first.util.WPISerializable;
-import edu.wpi.first.util.function.FloatSupplier;
-import edu.wpi.first.util.struct.StructSerializable;
+import org.wpilib.util.WPISerializable;
+import org.wpilib.util.function.FloatSupplier;
+import org.wpilib.util.struct.StructSerializable;
 
 public class LogFieldsTable implements LoggableInputs {
     private final static ArrayList<LogFieldsTable> createdTables = new ArrayList<>();

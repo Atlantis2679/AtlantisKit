@@ -1,13 +1,8 @@
 package team2679.atlantiskit.helpers;
 
-import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
-import team2679.atlantiskit.tunables.Tunable;
-import team2679.atlantiskit.tunables.TunableBuilder;
-import team2679.atlantiskit.valueholders.DoubleHolder;
+import org.wpilib.system.Timer;
 
-public class RotationalSensorHelper implements Tunable {
+public class RotationalSensorHelper {
     private double measuredAngle;
     private double offset;
     private double previousAngle;
@@ -78,34 +73,10 @@ public class RotationalSensorHelper implements Tunable {
 
     public double getVelocity() {
         double deltaTime = currTimeSec - prevTimeSec;
-        if (deltaTime == 0) {
-            DriverStation.reportWarning(
-                    "You should not request velocity after no time passed (probably called in initial loop).", true);
-            return 0;
-        }
         return (getAngle() - previousAngle) / deltaTime;
     }
 
     public double getOffset() {
         return offset;
-    }
-
-    @Override
-    public void initTunable(TunableBuilder builder) {
-        DoubleHolder angleToResetDegrees = new DoubleHolder(0);
-        builder.addDoubleProperty("raw angle measurment",
-                this::getMeasuredAngle, null);
-
-        builder.addDoubleProperty("calculated angle", this::getAngle, null);
-
-        builder.addDoubleProperty("offset", this::getOffset,
-                this::setOffset);
-
-        builder.addDoubleProperty("angle to reset", angleToResetDegrees::get,
-                angleToResetDegrees::set);
-
-        builder.addChild("reset!", new InstantCommand(() -> {
-            resetAngle(angleToResetDegrees.get());
-        }).ignoringDisable(true));
     }
 }
