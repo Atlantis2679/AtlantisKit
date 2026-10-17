@@ -197,23 +197,24 @@ public class LogFieldsTable implements LoggableInputs {
         return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
-    public <R extends Record> Supplier<Record> addRecord(
+    public <R extends Record> Supplier<R> addRecord(
             String name,
-            Supplier<Record> valueSupplier,
+            Supplier<R> valueSupplier,
             R defaultValue) {
         return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
-    public <R extends Record> Supplier<Record[]> addRecordArray(
+    @SuppressWarnings("unchecked")
+    public <R extends Record> Supplier<R[]> addRecordArray(
             String name,
-            Supplier<Record[]> valueSupplier,
+            Supplier<R[]> valueSupplier,
             R[] defaultValue) {
         return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
-    public <R extends Record> Supplier<Record[][]> addRecordMatrix(
+    public <R extends Record> Supplier<R[][]> addRecordMatrix(
             String name,
-            Supplier<Record[][]> valueSupplier,
+            Supplier<R[][]> valueSupplier,
             R[][] defaultValue) {
         return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
