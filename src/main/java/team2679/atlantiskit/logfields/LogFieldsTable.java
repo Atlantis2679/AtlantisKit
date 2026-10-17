@@ -359,7 +359,7 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-    public <U extends Unit> void recordOutput(String name, Measure<U> value) {
+    public <U extends Unit> void recordOutputMeasure(String name, Measure<U> value) {
         Logger.recordOutputMeasure(prefix + name, value);
     }
 }
