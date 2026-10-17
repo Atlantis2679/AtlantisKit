@@ -7,9 +7,7 @@
 AtlantisKit helps your team:
 
 - Simplify the use of AdvantageKit  
-- Tune values live via the dashboard 
 - Provide a simple and consistant alerts manager
-- Manage sensors and subsystems more easily
 
 ## Installation 📦
 To use AtlantisKit, you need to include [WPILib](https://github.com/wpilibsuite/allwpilib) and [AdvantageKit](https://github.com/AdvantageScope/AdvantageKit) as dependencies in your robot project. Make sure to add them to your vendordeps or build configuration before including AtlantisKit.
