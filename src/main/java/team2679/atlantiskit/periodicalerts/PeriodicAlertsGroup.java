@@ -3,11 +3,12 @@ package team2679.atlantiskit.periodicalerts;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
-import edu.wpi.first.wpilibj.Alert.AlertType;
+import org.wpilib.util.Alert;
 
 public class PeriodicAlertsGroup {
     public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("PeriodicAlerts");
     private final String groupName;
+    private int nextId = 0;
 
     public PeriodicAlertsGroup(String groupName) {
         this.groupName = groupName;
@@ -17,22 +18,23 @@ public class PeriodicAlertsGroup {
         return new PeriodicAlertsGroup(groupName + "/" + subGroupName);
     }
 
-    public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, AlertType alertType) {
-        PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, alertType);
+    public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, Alert.Level alertLevel) {
+        Integer id = nextId++;
+        PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, new Alert(this.getName(), id.toString(), message.get(), alertLevel));
         PeriodicAlertsManager.add(periodicAlert);
         return isActive;
     }
 
-    public BooleanSupplier addInfoAlert(Supplier<String> message, BooleanSupplier isActive) {
-        return addAlert(message, isActive, AlertType.kInfo);
+    public BooleanSupplier addLowAlert(Supplier<String> message, BooleanSupplier isActive) {
+        return addAlert(message, isActive, Alert.Level.LOW);
     }
 
-    public BooleanSupplier addWarningAlert(Supplier<String> message, BooleanSupplier isActive) {
-        return addAlert(message, isActive, AlertType.kWarning);
+    public BooleanSupplier addMediumAlert(Supplier<String> message, BooleanSupplier isActive) {
+        return addAlert(message, isActive, Alert.Level.MEDIUM);
     }
 
-    public BooleanSupplier addErrorAlert(Supplier<String> message, BooleanSupplier isActive) {
-        return addAlert(message, isActive, AlertType.kError);
+    public BooleanSupplier addHighAlert(Supplier<String> message, BooleanSupplier isActive) {
+        return addAlert(message, isActive, Alert.Level.HIGH);
     }
 
     public String getName() {

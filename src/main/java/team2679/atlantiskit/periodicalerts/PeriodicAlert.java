@@ -3,8 +3,7 @@ package team2679.atlantiskit.periodicalerts;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
-import edu.wpi.first.wpilibj.Alert;
-import edu.wpi.first.wpilibj.Alert.AlertType;
+import org.wpilib.util.Alert;
 
 public class PeriodicAlert {
   private final PeriodicAlertsGroup group;
@@ -12,31 +11,32 @@ public class PeriodicAlert {
   private final BooleanSupplier isActive;
   private final Alert alert;
 
-  public PeriodicAlert(PeriodicAlertsGroup group, Supplier<String> messageSupplier, BooleanSupplier isActive, AlertType alertType) {
-      this.messageSupplier = messageSupplier;
-      this.alert = new Alert(group.getName(), messageSupplier.get(), alertType);
-      this.group = group;
-      this.isActive = isActive;
+  protected PeriodicAlert(PeriodicAlertsGroup group, Supplier<String> messageSupplier, BooleanSupplier isActive, Alert alert) {
+    this.group = group;
+    this.messageSupplier = messageSupplier;
+    this.isActive = isActive;
+    this.alert = alert;
   }
 
   protected void update() {
-      alert.setText(messageSupplier.get());
-      alert.set(isActive.getAsBoolean());
+    alert.setText(messageSupplier.get());
+    alert.set(isActive.getAsBoolean());
+  }
+
+  public PeriodicAlertsGroup getGroup() {
+    return group;
+  }
+
+
+  public String getMessage() {
+    return messageSupplier.get();
   }
 
   public boolean getIsActive() {
     return isActive.getAsBoolean();
   }
 
-  public String getMessage() {
-    return messageSupplier.get();
-  }
-
-  public AlertType getAlertType() {
-    return alert.getType();
-  }
-
-  public PeriodicAlertsGroup getGroup() {
-    return group;
+  public Alert.Level getAlertLevel() {
+    return alert.getLevel();
   }
 }
