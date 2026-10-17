@@ -34,6 +34,8 @@ dependencies {
     implementation("org.wpilib.wpiunits:wpiunits-java:$wpilibVersion")
     implementation("org.wpilib.ntcore:ntcore-java:$wpilibVersion")
     implementation("org.wpilib.wpimath:wpimath-java:$wpilibVersion")
+    implementation("org.wpilib.tunables:tunables-java:$wpilibVersion")
+    implementation("org.wpilib.telemetry:telemetry-java:$wpilibVersion")
 
     implementation("org.littletonrobotics.akit:akit-java:$advantageKitVersion")
     implementation("us.hebi.quickbuf:quickbuf-runtime:1.3.3")

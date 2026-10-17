@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 import java.util.function.DoubleSupplier;
-import java.util.function.LongSupplier;
+import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 import org.littletonrobotics.junction.LogTable;
@@ -14,11 +14,12 @@ import org.littletonrobotics.junction.mechanism.LoggedMechanism2d;
 
 import team2679.atlantiskit.logfields.logfields.BooleanLogField;
 import team2679.atlantiskit.logfields.logfields.DoubleLogField;
-import team2679.atlantiskit.logfields.logfields.FloatLogField;
 import team2679.atlantiskit.logfields.logfields.IntegerLogField;
 import team2679.atlantiskit.logfields.logfields.LogField;
+
+import org.wpilib.units.Measure;
+import org.wpilib.units.Unit;
 import org.wpilib.util.WPISerializable;
-import org.wpilib.util.function.FloatSupplier;
 import org.wpilib.util.struct.StructSerializable;
 
 public class LogFieldsTable implements LoggableInputs {
@@ -80,28 +81,6 @@ public class LogFieldsTable implements LoggableInputs {
         return field;
     }
 
-    public Supplier<byte[]> addRaw(
-            String name,
-            Supplier<byte[]> valueSupplier,
-            byte[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<byte[]> addRaw(String name, Supplier<byte[]> valueSupplier) {
-        return addRaw(name, valueSupplier, new byte[0]);
-    }
-
-    public Supplier<byte[][]> addRawMatrix(
-            String name,
-            Supplier<byte[][]> valueSupplier,
-            byte[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<byte[][]> addRawMatrix(String name, Supplier<byte[][]> valueSupplier) {
-        return addRawMatrix(name, valueSupplier, new byte[0][0]);
-    }
-
     public BooleanSupplier addBoolean(
             String name,
             BooleanSupplier valueSupplier,
@@ -113,26 +92,15 @@ public class LogFieldsTable implements LoggableInputs {
         return addBoolean(name, valueSupplier, false);
     }
 
-    public LongSupplier addInteger(
+    public IntSupplier addInteger(
             String name,
-            LongSupplier valueSupplier,
-            long defaultValue) {
+            IntSupplier valueSupplier,
+            int defaultValue) {
         return registerField(new IntegerLogField(name, valueSupplier, defaultValue));
     }
 
-    public LongSupplier addInteger(String name, LongSupplier valueSupplier) {
+    public IntSupplier addInteger(String name, IntSupplier valueSupplier) {
         return addInteger(name, valueSupplier, 0);
-    }
-
-    public FloatSupplier addFloat(
-            String name,
-            FloatSupplier valueSupplier,
-            float defaultValue) {
-        return registerField(new FloatLogField(name, valueSupplier, defaultValue));
-    }
-
-    public FloatSupplier addFloat(String name, FloatSupplier valueSupplier) {
-        return addFloat(name, valueSupplier, 0);
     }
 
     public DoubleSupplier addDouble(
@@ -150,130 +118,68 @@ public class LogFieldsTable implements LoggableInputs {
             String name,
             Supplier<String> valueSupplier,
             String defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
-    public Supplier<String> addString(String name, Supplier<String> valueSupplier) {
+    public Supplier<String> addString(
+            String name,
+            Supplier<String> valueSupplier) {
         return addString(name, valueSupplier, "");
     }
 
     public Supplier<boolean[]> addBooleanArray(
             String name,
-            Supplier<boolean[]> valueSupplier,
-            boolean[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<boolean[]> addBooleanArray(String name, Supplier<boolean[]> valueSupplier) {
-        return addBooleanArray(name, valueSupplier, new boolean[0]);
+            Supplier<boolean[]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new boolean[0]));
     }
 
     public Supplier<long[]> addIntegerArray(
             String name,
-            Supplier<long[]> valueSupplier,
-            long[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<long[]> addIntegerArray(String name, Supplier<long[]> valueSupplier) {
-        return addIntegerArray(name, valueSupplier, new long[0]);
-    }
-
-    public Supplier<float[]> addFloatArray(
-            String name,
-            Supplier<float[]> valueSupplier,
-            float[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<float[]> addFloatArray(String name, Supplier<float[]> valueSupplier) {
-        return addFloatArray(name, valueSupplier, new float[0]);
+            Supplier<long[]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new long[0]));
     }
 
     public Supplier<double[]> addDoubleArray(
             String name,
-            Supplier<double[]> valueSupplier,
-            double[] defaultValue) {
-
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<double[]> addDoubleArray(String name, Supplier<double[]> valueSupplier) {
-        return addDoubleArray(name, valueSupplier, new double[0]);
+            Supplier<double[]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new double[0]));
     }
 
     public Supplier<String[]> addStringArray(
             String name,
-            Supplier<String[]> valueSupplier,
-            String[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<String[]> addStringArray(String name, Supplier<String[]> valueSupplier) {
-        return addStringArray(name, valueSupplier, new String[0]);
+            Supplier<String[]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new String[0]));
     }
 
     public Supplier<boolean[][]> addBooleanMatrix(
             String name,
-            Supplier<boolean[][]> valueSupplier,
-            boolean[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
+            Supplier<boolean[][]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new boolean[0][0]));
     }
 
-    public Supplier<boolean[][]> addBooleanMatrix(String name, Supplier<boolean[][]> valueSupplier) {
-        return addBooleanMatrix(name, valueSupplier, new boolean[0][0]);
-    }
-
-    public Supplier<long[][]> addIntegerMatrix(
+    public Supplier<long[][]> addLongMatrix(
             String name,
-            Supplier<long[][]> valueSupplier,
-            long[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<long[][]> addIntegerMatrix(String name, Supplier<long[][]> valueSupplier) {
-        return addIntegerMatrix(name, valueSupplier, new long[0][0]);
-    }
-
-    public Supplier<float[][]> addFloatMatrix(
-            String name,
-            Supplier<float[][]> valueSupplier,
-            float[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<float[][]> addFloatMatrix(String name, Supplier<float[][]> valueSupplier) {
-        return addFloatMatrix(name, valueSupplier, new float[0][0]);
+            Supplier<long[][]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new long[0][0]));
     }
 
     public Supplier<double[][]> addDoubleMatrix(
             String name,
-            Supplier<double[][]> valueSupplier,
-            double[][] defaultValue) {
-
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<double[][]> addDoubleMatrix(String name, Supplier<double[][]> valueSupplier) {
-        return addDoubleMatrix(name, valueSupplier, new double[0][0]);
+            Supplier<double[][]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new double[0][0]));
     }
 
     public Supplier<String[][]> addStringMatrix(
             String name,
-            Supplier<String[][]> valueSupplier,
-            String[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
-    }
-
-    public Supplier<String[][]> addStringMatrix(String name, Supplier<String[][]> valueSupplier) {
-        return addStringMatrix(name, valueSupplier, new String[0][0]);
+            Supplier<String[][]> valueSupplier) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, new String[0][0]));
     }
 
     public <T extends WPISerializable> Supplier<T> addObject(
             String name,
             Supplier<T> valueSupplier,
             T defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
     @SuppressWarnings("unchecked")
@@ -281,14 +187,52 @@ public class LogFieldsTable implements LoggableInputs {
             String name,
             Supplier<T[]> valueSupplier,
             T[] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
     public <T extends StructSerializable> Supplier<T[][]> addObjectMatrix(
             String name,
             Supplier<T[][]> valueSupplier,
             T[][] defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put));
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
+    }
+
+    public <R extends Record> Supplier<Record> addRecord(
+            String name,
+            Supplier<Record> valueSupplier,
+            R defaultValue) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
+    }
+
+    public <R extends Record> Supplier<Record[]> addRecordArray(
+            String name,
+            Supplier<Record[]> valueSupplier,
+            R[] defaultValue) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
+    }
+
+    public <R extends Record> Supplier<Record[][]> addRecordMatrix(
+            String name,
+            Supplier<Record[][]> valueSupplier,
+            R[][] defaultValue) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
+    }
+
+    public <U extends Unit, M extends Measure<U>> Supplier<M> addMeasure(
+            String name,
+            Supplier<M> valueSupplier,
+            M defaultValue) {
+        return registerField(new LogField<>(name, valueSupplier, LogTable::getMeasure, LogTable::putMeasure, defaultValue));
+    }
+
+    public <T> Supplier<T> add(String name, Supplier<T> supplier,
+           LogField.LogTableGetFunc<T> getter,
+           LogField.LogTablePutFunc<T> putter, T defaultValue) {
+       return registerField(new LogField<>(name, supplier, getter, putter, defaultValue));
+    }
+
+    public void recordOutput(String name, byte value) {
+        Logger.recordOutput(prefix + name, value);
     }
 
     public void recordOutput(String name, byte[] value) {
@@ -335,7 +279,6 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-
     public void recordOutput(String name, float value) {
         Logger.recordOutput(prefix + name, value);
     }
@@ -376,7 +319,8 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-    public <E extends Enum<E>> void recordOutput(String name, E[] value) {
+    @SuppressWarnings("unchecked")
+    public <E extends Enum<E>> void recordOutput(String name, E... value) {
         Logger.recordOutput(prefix + name, value);
     }
 
@@ -412,5 +356,9 @@ public class LogFieldsTable implements LoggableInputs {
 
     public void recordOutput(String name, LoggedMechanism2d value) {
         Logger.recordOutput(prefix + name, value);
+    }
+
+    public <U extends Unit> void recordOutput(String name, Measure<U> value) {
+        Logger.recordOutputMeasure(prefix + name, value);
     }
 }

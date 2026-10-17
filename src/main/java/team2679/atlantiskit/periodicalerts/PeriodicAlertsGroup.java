@@ -8,6 +8,7 @@ import org.wpilib.util.Alert;
 public class PeriodicAlertsGroup {
     public static final PeriodicAlertsGroup defaultInstance = new PeriodicAlertsGroup("PeriodicAlerts");
     private final String groupName;
+    private int nextId = 0;
 
     public PeriodicAlertsGroup(String groupName) {
         this.groupName = groupName;
@@ -18,7 +19,8 @@ public class PeriodicAlertsGroup {
     }
 
     public BooleanSupplier addAlert(Supplier<String> message, BooleanSupplier isActive, Alert.Level alertLevel) {
-        PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, alertLevel);
+        Integer id = nextId++;
+        PeriodicAlert periodicAlert = new PeriodicAlert(this, message, isActive, new Alert(this.getName(), id.toString(), message.get(), alertLevel));
         PeriodicAlertsManager.add(periodicAlert);
         return isActive;
     }

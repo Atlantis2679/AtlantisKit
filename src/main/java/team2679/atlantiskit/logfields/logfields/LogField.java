@@ -24,11 +24,13 @@ public class LogField<T> implements Supplier<T>, LoggableInputs {
             String name,
             Supplier<T> valueSupplier,
             LogTableGetFunc<T> logTableGetFunc,
-            LogTablePutFunc<T> logTablePutFunc) {
+            LogTablePutFunc<T> logTablePutFunc,
+            T defaultValue) {
         this.name = name;
         this.valueSupplier = valueSupplier;
         this.logTableGetFunc = logTableGetFunc;
         this.logTablePutFunc = logTablePutFunc;
+        this.value = defaultValue;
     }
 
     @Override

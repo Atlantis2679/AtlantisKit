@@ -11,31 +11,32 @@ public class PeriodicAlert {
   private final BooleanSupplier isActive;
   private final Alert alert;
 
-  public PeriodicAlert(PeriodicAlertsGroup group, Supplier<String> messageSupplier, BooleanSupplier isActive, Alert.Level alertLevel) {
-      this.messageSupplier = messageSupplier;
-      this.alert = new Alert(group.getName(), messageSupplier.get(), alertLevel);
-      this.group = group;
-      this.isActive = isActive;
+  protected PeriodicAlert(PeriodicAlertsGroup group, Supplier<String> messageSupplier, BooleanSupplier isActive, Alert alert) {
+    this.group = group;
+    this.messageSupplier = messageSupplier;
+    this.isActive = isActive;
+    this.alert = alert;
   }
 
   protected void update() {
-      alert.setText(messageSupplier.get());
-      alert.set(isActive.getAsBoolean());
+    alert.setText(messageSupplier.get());
+    alert.set(isActive.getAsBoolean());
+  }
+
+  public PeriodicAlertsGroup getGroup() {
+    return group;
+  }
+
+
+  public String getMessage() {
+    return messageSupplier.get();
   }
 
   public boolean getIsActive() {
     return isActive.getAsBoolean();
   }
 
-  public String getMessage() {
-    return messageSupplier.get();
-  }
-
   public Alert.Level getAlertLevel() {
     return alert.getLevel();
-  }
-
-  public PeriodicAlertsGroup getGroup() {
-    return group;
   }
 }

@@ -1,32 +1,32 @@
 package team2679.atlantiskit.logfields.logfields;
 
-import java.util.function.LongSupplier;
+import java.util.function.IntSupplier;
 
 import org.littletonrobotics.junction.LogTable;
 import org.littletonrobotics.junction.inputs.LoggableInputs;
 
-public class IntegerLogField implements LongSupplier, LoggableInputs {
-    private final LongSupplier valueSupplier;
+public class IntegerLogField implements IntSupplier, LoggableInputs {
+    private final IntSupplier valueSupplier;
     private final String name;
-    private long value;
+    private int value;
 
     public IntegerLogField(
             String name,
-            LongSupplier valueSupplier,
-            long defaultValue) {
+            IntSupplier valueSupplier,
+            int defaultValue) {
         this.name = name;
         this.valueSupplier = valueSupplier;
         this.value = defaultValue;
     }
 
     @Override
-    public long getAsLong() {
+    public int getAsInt() {
         return value;
     }
 
     @Override
     public void toLog(LogTable table) {
-        value = valueSupplier.getAsLong();
+        value = valueSupplier.getAsInt();
         table.put(name, value);
     }
 
