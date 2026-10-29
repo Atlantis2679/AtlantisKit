@@ -17,10 +17,10 @@ import team2679.atlantiskit.logfields.logfields.DoubleLogField;
 import team2679.atlantiskit.logfields.logfields.IntegerLogField;
 import team2679.atlantiskit.logfields.logfields.LogField;
 
-import org.wpilib.units.Measure;
-import org.wpilib.units.Unit;
-import org.wpilib.util.WPISerializable;
-import org.wpilib.util.struct.StructSerializable;
+import edu.wpi.first.units.Measure;
+import edu.wpi.first.units.Unit;
+import edu.wpi.first.util.WPISerializable;
+import edu.wpi.first.util.struct.StructSerializable;
 
 public class LogFieldsTable implements LoggableInputs {
     private final static ArrayList<LogFieldsTable> createdTables = new ArrayList<>();
@@ -223,7 +223,7 @@ public class LogFieldsTable implements LoggableInputs {
             String name,
             Supplier<M> valueSupplier,
             M defaultValue) {
-        return registerField(new LogField<>(name, valueSupplier, LogTable::getMeasure, LogTable::putMeasure, defaultValue));
+        return registerField(new LogField<>(name, valueSupplier, LogTable::get, LogTable::put, defaultValue));
     }
 
     public <T> Supplier<T> add(String name, Supplier<T> supplier,
@@ -359,7 +359,7 @@ public class LogFieldsTable implements LoggableInputs {
         Logger.recordOutput(prefix + name, value);
     }
 
-    public <U extends Unit> void recordOutputMeasure(String name, Measure<U> value) {
-        Logger.recordOutputMeasure(prefix + name, value);
+    public <U extends Unit> void recordOutput(String name, Measure<U> value) {
+        Logger.recordOutput(prefix + name, value);
     }
 }
